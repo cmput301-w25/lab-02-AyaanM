@@ -2,11 +2,11 @@ package com.example.listycity;
 
 import android.os.Bundle;
 import android.view.View;
+import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.ListView;
-import android.widget.TextView;
 
 import androidx.activity.EdgeToEdge;
 import androidx.appcompat.app.AppCompatActivity;
@@ -21,9 +21,9 @@ public class MainActivity extends AppCompatActivity {
     ListView cityList;
     ArrayAdapter<String> cityAdapter;
     ArrayList<String> dataList;
-
     EditText inputCity;
     String newCity;
+    int cityToDelete = -1;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -74,7 +74,24 @@ public class MainActivity extends AppCompatActivity {
                     inputCity.setVisibility(View.GONE);
                     confirmButton.setVisibility(View.GONE);
                 }
+            }
+        });
 
+        cityList.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+            @Override
+            public void onItemClick(AdapterView<?> parent, View v, int position, long id) {
+                cityToDelete = position;
+            }
+        });
+
+        deleteButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                if (cityToDelete != -1) {
+                    dataList.remove(cityToDelete);
+                    cityAdapter.notifyDataSetChanged();
+                    cityToDelete = -1;
+                }
             }
         });
 
