@@ -2,4 +2,9 @@
 <resources>
     <string name="sample_text">sample_text</string>
     <string name="app_name">ListyCity</string>
+    <string name="delete_city">Delete City</string>
+    <string name="add_city">Add City</string>
+    <string name="confirm">Confirm\n</string>
+    <string name="city">Edmonton</string>
+    <string name="edmonton">Edmonton</string>
 </resources>
