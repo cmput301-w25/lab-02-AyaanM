@@ -34,6 +34,7 @@ public class MainActivity extends AppCompatActivity {
 
         Button addButton = findViewById(R.id.add);
         Button deleteButton = findViewById(R.id.delete);
+        Button confirmButton = findViewById(R.id.confirm_input);
 
         EdgeToEdge.enable(this);
         ViewCompat.setOnApplyWindowInsetsListener(findViewById(R.id.main), (v, insets) -> {
@@ -44,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
 
         cityList = findViewById(R.id.city_list);
 
-
         String[] cities = {"Edmonton", "Paris", "London", "Ottawa"};
 
         dataList = new ArrayList<>();
@@ -53,7 +53,7 @@ public class MainActivity extends AppCompatActivity {
         cityAdapter = new ArrayAdapter<>(this, R.layout.content, dataList);
         cityList.setAdapter(cityAdapter);
 
-        addButton.setOnClickListener(new View.OnClickListener() {
+        confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
                 newCity = inputCity.getText().toString();
