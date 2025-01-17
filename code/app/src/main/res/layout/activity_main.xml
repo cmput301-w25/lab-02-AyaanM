@@ -23,7 +23,7 @@
         android:id="@+id/add"
         android:layout_width="169dp"
         android:layout_height="48dp"
-        android:text="@string/add_city"
+        android:text="@string/ad_city"
         app:layout_constraintBottom_toBottomOf="@+id/city_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.542"
@@ -35,13 +35,13 @@
         android:id="@+id/delete"
         android:layout_width="173dp"
         android:layout_height="45dp"
-        android:text="@string/delete_city"
+        android:text="@string/del_city"
         app:layout_constraintBottom_toBottomOf="@+id/city_list"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.072"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:layout_constraintVertical_bias="0.021" />
+        app:layout_constraintVertical_bias="0.021"/>
 
     <EditText
         android:id="@+id/input_text"
@@ -63,7 +63,7 @@
         android:layout_width="111dp"
         android:layout_height="45dp"
         android:onClick="addCity"
-        android:text="@string/cnfrm"
+        android:text="@string/c"
         android:visibility="gone"
         app:layout_constraintBottom_toTopOf="@+id/city_list"
         app:layout_constraintEnd_toEndOf="parent"
@@ -71,5 +71,28 @@
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/add"
         app:layout_constraintVertical_bias="0.474" />
+
+    <FrameLayout
+        android:id="@+id/header"
+        android:layout_width="353dp"
+        android:layout_height="67dp"
+        android:background="#800080"
+        app:layout_constraintBottom_toTopOf="@+id/city_list"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.814">
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/listycity"
+            android:textColor="#FFFFFF"
+            android:textStyle="bold"
+            android:layout_gravity="center"
+            android:textSize="40sp"/>  <!-- Centered text -->
+
+    </FrameLayout>
+
 
 </androidx.constraintlayout.widget.ConstraintLayout>

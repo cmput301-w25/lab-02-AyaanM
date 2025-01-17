@@ -9,4 +9,8 @@
     <string name="edmonton">Edmonton</string>
     <string name="cnfrm">Confirm</string>
     <string name="Edmonton">Edmonton</string>
+    <string name="listycity">ListyCity</string>
+    <string name="c">CONFIRM</string>
+    <string name="del_city">DELETE CITY</string>
+    <string name="ad_city">ADD CITY</string>
 </resources>

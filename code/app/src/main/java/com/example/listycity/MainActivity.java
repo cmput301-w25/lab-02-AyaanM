@@ -6,6 +6,7 @@ import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
 import android.widget.Button;
 import android.widget.EditText;
+import android.widget.FrameLayout;
 import android.widget.ListView;
 
 import androidx.activity.EdgeToEdge;
@@ -23,6 +24,7 @@ public class MainActivity extends AppCompatActivity {
     ArrayList<String> dataList;
     EditText inputCity;
     String newCity;
+    FrameLayout header;
     int cityToDelete = -1;
 
     @Override
@@ -31,6 +33,7 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
         inputCity = findViewById(R.id.input_text);
+        header = findViewById(R.id.header);
 
         Button addButton = findViewById(R.id.add);
         Button deleteButton = findViewById(R.id.delete);
@@ -45,7 +48,7 @@ public class MainActivity extends AppCompatActivity {
 
         cityList = findViewById(R.id.city_list);
 
-        String[] cities = {"Edmonton", "Paris", "London", "Ottawa"};
+        String[] cities = {"Edmonton", "Calgary", "Atlanta", "Washington", "Montreal", "Karachi"};
 
         dataList = new ArrayList<>();
         dataList.addAll(Arrays.asList(cities));
@@ -57,6 +60,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void onClick(View v) {
                 // Show input field and confirm button
+                header.setVisibility(View.GONE);
                 inputCity.setVisibility(View.VISIBLE);
                 confirmButton.setVisibility(View.VISIBLE);
             }
@@ -73,6 +77,7 @@ public class MainActivity extends AppCompatActivity {
                     inputCity.setText("");
                     inputCity.setVisibility(View.GONE);
                     confirmButton.setVisibility(View.GONE);
+                    header.setVisibility(View.VISIBLE);
                 }
             }
         });
