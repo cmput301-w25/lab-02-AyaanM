@@ -53,6 +53,15 @@ public class MainActivity extends AppCompatActivity {
         cityAdapter = new ArrayAdapter<>(this, R.layout.content, dataList);
         cityList.setAdapter(cityAdapter);
 
+        addButton.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                // Show input field and confirm button
+                inputCity.setVisibility(View.VISIBLE);
+                confirmButton.setVisibility(View.VISIBLE);
+            }
+        });
+
         confirmButton.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -62,6 +71,8 @@ public class MainActivity extends AppCompatActivity {
                     dataList.add(newCity);
                     cityAdapter.notifyDataSetChanged();
                     inputCity.setText("");
+                    inputCity.setVisibility(View.GONE);
+                    confirmButton.setVisibility(View.GONE);
                 }
 
             }
